@@ -7,11 +7,11 @@ pipeline {
         stage('Build') {
             steps {
                 script { 
-                    log.info 'Start Build step'
+                    logging.info 'Start Build step'
                 }
                 echo 'Building..'
                 script { 
-                    log.warning 'Build step finished!'
+                    logging.warning 'Build step finished!'
                 }
             }
         }
