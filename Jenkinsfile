@@ -28,7 +28,10 @@ pipeline {
     }
     post {
     	always {
-        	sendToTeams
+        	sendToTeams {
+        	    
+        	}
+
         }
     }
 }
