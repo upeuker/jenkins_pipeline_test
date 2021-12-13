@@ -30,7 +30,7 @@ pipeline {
     	always {
     		script {
 	        	sendToTeams {
-    	    	    type 'error'
+    	    	    type = 'error'
         		}
     		}
         }
