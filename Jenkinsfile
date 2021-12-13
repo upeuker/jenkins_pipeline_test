@@ -23,7 +23,7 @@ pipeline {
                    echo "Buildstatus: '${currentBuild.result}'"
             }
             post {
-                failure {
+                always {
                     msgToTeams("subject": "Fehler beim Test", "attachLog": "true") 
                 }
 
