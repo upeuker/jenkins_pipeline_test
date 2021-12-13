@@ -28,7 +28,7 @@ pipeline {
     }
     post {
     	always {
-    		msgToTeams()
+    		msgToTeams('type':'warning')
     		script {
 	        	sendToTeams {
     	    	    type = 'error'
