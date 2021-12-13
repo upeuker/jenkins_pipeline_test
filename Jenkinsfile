@@ -13,6 +13,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 getCredentials()
+                echo "Set: ${env.a}"
             }
             
         }
