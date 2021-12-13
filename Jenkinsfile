@@ -20,14 +20,15 @@ pipeline {
             steps {
                 echo 'Testing..'
                 msgToTeams()
+                   echo ${currentBuild.result}
             }
-             echo ${currentBuild.result}
+          
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                 echo ${currentBuild.result}
             }
-             echo ${currentBuild.result}
         }
     }
     post {
