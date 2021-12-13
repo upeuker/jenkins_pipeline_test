@@ -13,21 +13,21 @@ pipeline {
                 script { 
                     logging.warning 'Build step finished!'
                 }
-                echo "${currentBuild.result}"
+                echo "Buildstatus: '${currentBuild.result}'"
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
               //  msgToTeams()
-                   echo "${currentBuild.result}"
+                   echo "Buildstatus: '${currentBuild.result}'"
             }
           
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                 echo "${currentBuild.result}"
+                 echo "Buildstatus: '${currentBuild.result}'"
             }
         }
     }
@@ -39,7 +39,7 @@ pipeline {
     	    	    type = 'error'
         		}
     		}
-    		 echo "${currentBuild.result}"
+    		 echo "Buildstatus '${currentBuild.result}'"
         }
     }
 }
