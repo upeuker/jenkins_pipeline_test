@@ -22,6 +22,13 @@ pipeline {
               //  msgToTeams()
                    echo "Buildstatus: '${currentBuild.result}'"
             }
+            post {
+                failure {
+                    msgToTeams("subject": "Fehler beim Test", "attachLog": "true") 
+                }
+
+            }
+
           
         }
         stage('Deploy') {
