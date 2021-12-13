@@ -25,12 +25,10 @@ pipeline {
                 echo 'Deploying....'
             }
         }
-        post {
-            always {
-                sendToTeams
-            }
-
+    }
+    post {
+    	always {
+        	sendToTeams
         }
-
     }
 }
