@@ -12,8 +12,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                getCredentials()
             }
-            getCredentials()
+            
         }
         stage('Test') {
             steps {
