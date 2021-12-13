@@ -28,10 +28,11 @@ pipeline {
     }
     post {
     	always {
-        	sendToTeams {
-        	    type 'error'
-        	}
-
+    		script {
+	        	sendToTeams {
+    	    	    type 'error'
+        		}
+    		}
         }
     }
 }
