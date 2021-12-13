@@ -13,6 +13,10 @@ pipeline {
             steps {
                 echo 'Building..'
                 echo "Set: " + getCredentials()
+                echo "Set (SAMPLE): " + getCredentials("key":"SAMPLE")
+                echo "Set (TEST): " + getCredentials("key":"TEST")
+                echo "Set (TEST-Default): " + getCredentials("key":"TEST", "default": "PAULA")
+                
             }
             
         }
