@@ -3,27 +3,28 @@
 pipeline {
     agent any
 
+	environment {
+	    AAA = 'true'
+        BBB    = 'sqlite'
+	}
+
+	environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+    }
+
     stages {
         stage('Build') {
             steps {
-                script { 
-                    logging.info 'Start Build step'
-                }
                 echo 'Building..'
-                script { 
-                    logging.warning 'Build step finished!'
-                }
-                echo "Buildstatus: '${currentBuild.result}'"
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing..'
-              //  msgToTeams()
-                   echo "Buildstatus: '${currentBuild.result}'"
             }
             post {
-                always {
+                failure {
                     msgToTeams("subject": "Fehler beim Test", "attachLog": "true") 
                 }
 
@@ -34,7 +35,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                echo "Buildstatus: '${currentBuild.result}'"
                 msgToTeams("subject": "Deployed") 
             }
         }
