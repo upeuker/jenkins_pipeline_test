@@ -12,8 +12,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                getCredentials()
-                echo "Set: ${env.a}"
+                echo "Set: " + getCredentials()
             }
             
         }
