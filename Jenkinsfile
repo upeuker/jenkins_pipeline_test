@@ -7,17 +7,13 @@ pipeline {
 	    AAA = 'true'
         BBB    = 'sqlite'
 	}
-
-	environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
-    }
-
+	
     stages {
         stage('Build') {
             steps {
                 echo 'Building..'
             }
+            getCredentials()
         }
         stage('Test') {
             steps {
