@@ -13,6 +13,7 @@ pipeline {
                 script { 
                     logging.warning 'Build step finished!'
                 }
+                echo ${currentBuild.result}
             }
         }
         stage('Test') {
@@ -20,11 +21,13 @@ pipeline {
                 echo 'Testing..'
                 msgToTeams()
             }
+             echo ${currentBuild.result}
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
+             echo ${currentBuild.result}
         }
     }
     post {
@@ -35,6 +38,7 @@ pipeline {
     	    	    type = 'error'
         		}
     		}
+    		 echo ${currentBuild.result}
         }
     }
 }
