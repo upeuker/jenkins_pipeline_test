@@ -29,7 +29,7 @@ pipeline {
     post {
     	always {
         	sendToTeams {
-        	    type = 'error'
+        	    type 'error'
         	}
 
         }
