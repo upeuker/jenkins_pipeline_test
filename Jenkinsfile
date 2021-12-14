@@ -12,10 +12,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                echo "Set: " + getCredentials()
-                echo "Set (SAMPLE): " + getCredentials("key":"SAMPLE")
-                echo "Set (TEST): " + getCredentials("key":"TEST")
-                echo "Set (TEST-Default): " + getCredentials("key":"TEST", "default": "PAULA")
+                echo "Get: " + getCredentials()
+                echo "Get (SAMPLE): " + getCredentials("key":"SAMPLE")
+                echo "Get (TEST): " + getCredentials("key":"TEST")
+                echo "Get (TEST-Default): " + getCredentials("key":"TEST", "default": "PAULA")
                 
             }
             
